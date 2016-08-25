@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import TopMenu from './TopMenu'
 import Aside from './Aside'
-import Content from './Content'
+import MiddleMenu from './MiddleMenu'
 
 class App extends Component {
     render() {
@@ -9,7 +9,7 @@ class App extends Component {
             <div className="App">
                 <TopMenu/>
                 <Aside/>
-                <Content/>
+                <MiddleMenu/>
             </div>
         );
     }
