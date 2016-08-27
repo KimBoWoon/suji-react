@@ -9,7 +9,7 @@ class TopMenu extends Component {
         return (
             <header className="header black-bg">
                 <div className="sidebar-toggle-box">
-                    <div className="fa fa-bars tooltips" data="right" data-original-title="Toggle Navigation"></div>
+                    <div className="fa fa-bars tooltips" placement="right" overlay="Toggle Navigation"></div>
                 </div>
                 <a href="index.html" className="logo"><b>DASHGUM FREE</b></a>
                 <div className="nav notify-row" id="top_menu">
