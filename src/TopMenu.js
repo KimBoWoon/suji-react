@@ -3,14 +3,43 @@
  */
 
 import React, {Component} from 'react';
+import {Page, Toolbar, Button, ToolbarButton, Icon} from 'react-onsenui';
 
 class TopMenu extends Component {
+    constructor(props){
+        super(props);
+
+        this.state = {
+            flag: true
+        };
+
+        this._update = this._update.bind(this);
+    }
+
+    _update() {
+        let sidebarToggle;
+
+        this.state.flag = !this.state.flag;
+
+        if (this.state.flag)
+            sidebarToggle = "sidebar-closed";
+        else
+            sidebarToggle = "";
+
+        this.props.onUpdate(sidebarToggle);
+
+        console.log("sidebar" + " " + this.state.flag);
+        console.log("sidebartag" + " " + this.state.sidebarTag);
+    }
+
     render() {
         return (
             <header className="header black-bg">
-                <div className="sidebar-toggle-box">
-                    <div className="fa fa-bars tooltips" placement="right" overlay="Toggle Navigation"></div>
-                </div>
+                <Toolbar>
+                    <div className='sidebar-toggle-box' onClick={this._update}>
+                        <div className="fa fa-bars tooltips"></div>
+                    </div>
+                </Toolbar>
                 <a href="index.html" className="logo"><b>DASHGUM FREE</b></a>
                 <div className="nav notify-row" id="top_menu">
                     <ul className="nav top-menu">
