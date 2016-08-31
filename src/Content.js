@@ -6,6 +6,15 @@
 import React, {Component} from 'react';
 
 class Content extends Component {
+    componentDidMount() {
+        this.updateCanvas();
+    }
+
+    updateCanvas() {
+        const ctx = this.refs.canvas.getContext('2d');
+        ctx.fillRect(0, 0, 100, 100);
+    }
+
     render() {
         return (
             <div>
@@ -17,10 +26,11 @@ class Content extends Component {
                             </div>
                             <div className="row">
                                 <div className="col-sm-6 col-xs-6 goleft">
-                                    <p><i className="fa fa-database"></i> 70%</p>
+                                    <p><i className="fa fa-database"/> 70%</p>
                                 </div>
                             </div>
-                            <canvas id="serverstatus01" height="120" width="120"></canvas>
+                            <canvas id="serverstatus01" height={120} width={120} style={{height: 120, width: 120}}/>
+                            {/*<canvas ref="canvas" width={300} height={300}/>*/}
                         </div>
                     </div>
                     <div className="col-md-4 col-sm-4 mb">
@@ -30,7 +40,7 @@ class Content extends Component {
                             </div>
                             <div className="row">
                                 <div className="col-sm-6 col-xs-6 goleft">
-                                    <p><i className="fa fa-heart"></i> 122</p>
+                                    <p><i className="fa fa-heart"/> 122</p>
                                 </div>
                                 <div className="col-sm-6 col-xs-6"></div>
                             </div>
@@ -65,11 +75,11 @@ class Content extends Component {
                             <div className="darkblue-header">
                                 <h5>DROPBOX STATICS</h5>
                             </div>
-                            <canvas id="serverstatus02" height="120" width="120"></canvas>
+                            <canvas id="serverstatus02" height="120" width="120"/>
                             <p>April 17, 2014</p>
                             <footer>
                                 <div className="pull-left">
-                                    <h5><i className="fa fa-hdd-o"></i> 17 GB</h5>
+                                    <h5><i className="fa fa-hdd-o"/> 17 GB</h5>
                                 </div>
                                 <div className="pull-right">
                                     <h5>60% Used</h5>
@@ -79,11 +89,11 @@ class Content extends Component {
                     </div>
                     <div className="col-md-4 mb">
                         <div className="instagram-panel pn">
-                            <i className="fa fa-instagram fa-4x"></i>
+                            <i className="fa fa-instagram fa-4x"/>
                             <p>@THISISYOU<br/>
                                 5 min. ago
                             </p>
-                            <p><i className="fa fa-comment"></i> 18 | <i className="fa fa-heart"></i> 49</p>
+                            <p><i className="fa fa-comment"/> 18 | <i className="fa fa-heart"/> 49</p>
                         </div>
                     </div>
                     <div className="col-md-4 col-sm-4 mb">

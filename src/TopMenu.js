@@ -19,8 +19,10 @@ class TopMenu extends Component {
                 </div>
                 <a href="index.html" className="logo"><b>DASHGUM FREE</b></a>
                 <div className="nav notify-row" id="top_menu">
-                    <Task/>
-                    <Message/>
+                    <ul className="nav top-menu">
+                        <Task/>
+                        <Message/>
+                    </ul>
                 </div>
                 <Login/>
             </header>
