@@ -8,18 +8,8 @@ class App extends Component {
         super(props);
 
         this.state = {
-            sidebarTag: "sidebar-closed"
+            sidebarTag: ""
         };
-
-        this.sidebarToggle = this.sidebarToggle.bind(this);
-    }
-
-    sidebarToggle(flag){
-        this.setState({
-            sidebarTag: flag
-        });
-
-        console.log(flag);
     }
 
     render() {
