@@ -3,9 +3,10 @@
  */
 
 import React, {Component} from 'react';
-import {OverlayTrigger, Tooltip, DropdownButton, MenuItem} from 'react-bootstrap';
+import {OverlayTrigger, Tooltip} from 'react-bootstrap';
 import Task from './Task'
 import Message from './Message'
+import Login from './Login'
 
 class TopMenu extends Component {
     render() {
@@ -21,11 +22,7 @@ class TopMenu extends Component {
                     <Task/>
                     <Message/>
                 </div>
-                <div className="top-menu">
-                    <ul className="nav pull-right top-menu">
-                        <li><a className="logout" href="login.html">Logout</a></li>
-                    </ul>
-                </div>
+                <Login/>
             </header>
         );
     }
