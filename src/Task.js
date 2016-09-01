@@ -3,18 +3,43 @@
  */
 
 import React, {Component} from 'react';
-import {DropdownButton, MenuItem, ProgressBar} from 'react-bootstrap';
+import {ProgressBar} from 'react-bootstrap';
 
 class Task extends Component {
+    constructor(props){
+        super(props);
+
+        this.state = {
+            openDropdownFlag: false
+        };
+    }
+
+    showDropdown() {
+        this.state.openDropdownFlag = !this.state.openDropdownFlag;
+
+        if (this.state.openDropdownFlag)
+            this.state.openDropdownToggle = "dropdown open";
+        else
+            this.state.openDropdownToggle = "dropdown";
+
+        this.setState({
+            openDropdownToggle: this.state.openDropdownToggle
+        });
+    }
+
     render() {
         return (
-            <li className="dropdown">
-                <span className="badge bg-theme">4</span>
-                <DropdownButton className="fa fa-tasks">
-                    <MenuItem eventKey="0">
+            <li className={this.state.openDropdownToggle}>
+                <a data-toggle="dropdown" className="dropdown-toggle" href="index.html#" onClick={this.showDropdown.bind(this)}>
+                    <i className="fa fa-tasks"/>
+                    <span className="badge bg-theme">4</span>
+                </a>
+                <ul className="dropdown-menu extended tasks-bar">
+                    <div className="notify-arrow notify-arrow-green"/>
+                    <li>
                         <p className="green">You have 4 pending tasks</p>
-                    </MenuItem>
-                    <MenuItem eventKey="1">
+                    </li>
+                    <li>
                         <a href="index.html#">
                             <div className="task-info">
                                 <div className="desc">DashGum Admin Panel</div>
@@ -22,8 +47,8 @@ class Task extends Component {
                             </div>
                             <ProgressBar active bsStyle="success" now={40}/>
                         </a>
-                    </MenuItem>
-                    <MenuItem eventKey="2">
+                    </li>
+                    <li>
                         <a href="index.html#">
                             <div className="task-info">
                                 <div className="desc">Database Update</div>
@@ -31,8 +56,8 @@ class Task extends Component {
                             </div>
                             <ProgressBar active bsStyle="warning" now={60}/>
                         </a>
-                    </MenuItem>
-                    <MenuItem eventKey="3">
+                    </li>
+                    <li>
                         <a href="index.html#">
                             <div className="task-info">
                                 <div className="desc">Product Development</div>
@@ -40,8 +65,8 @@ class Task extends Component {
                             </div>
                             <ProgressBar active bsStyle="info" now={80}/>
                         </a>
-                    </MenuItem>
-                    <MenuItem eventKey="4">
+                    </li>
+                    <li>
                         <a href="index.html#">
                             <div className="task-info">
                                 <div className="desc">Payments Sent</div>
@@ -49,11 +74,11 @@ class Task extends Component {
                             </div>
                             <ProgressBar active bsStyle="danger" now={70}/>
                         </a>
-                    </MenuItem>
-                    <MenuItem eventKey="5" className="external">
+                    </li>
+                    <li>
                         <a href="#">See All Tasks</a>
-                    </MenuItem>
-                </DropdownButton>
+                    </li>
+                </ul>
             </li>
         );
     }

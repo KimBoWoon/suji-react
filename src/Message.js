@@ -3,18 +3,42 @@
  */
 
 import React, {Component} from 'react';
-import {DropdownButton, MenuItem} from 'react-bootstrap';
 
 class Message extends Component {
+    constructor(props){
+        super(props);
+
+        this.state = {
+            openDropdownFlag: false
+        };
+    }
+
+    showDropdown() {
+        this.state.openDropdownFlag = !this.state.openDropdownFlag;
+
+        if (this.state.openDropdownFlag)
+            this.state.openDropdownToggle = "dropdown open";
+        else
+            this.state.openDropdownToggle = "dropdown";
+
+        this.setState({
+            openDropdownToggle: this.state.openDropdownToggle
+        });
+    }
+
     render() {
         return (
-            <li id="header_inbox_bar" class="dropdown">
-                <span className="badge bg-theme">5</span>
-                <DropdownButton className="fa fa-envelope-o">
-                    <MenuItem eventKey="0">
+            <li id="header_inbox_bar" className={this.state.openDropdownToggle}>
+                <a data-toggle="dropdown" className="dropdown-toggle" href="index.html#" onClick={this.showDropdown.bind(this)}>
+                    <i className="fa fa-envelope-o"/>
+                    <span className="badge bg-theme">5</span>
+                </a>
+                <ul className="dropdown-menu extended inbox">
+                    <div className="notify-arrow notify-arrow-green"/>
+                    <li>
                         <p className="green">You have 5 new messages</p>
-                    </MenuItem>
-                    <MenuItem eventKey="1">
+                    </li>
+                    <li>
                         <a href="index.html#">
                             <span className="photo"><img alt="avatar" src="assets/img/ui-zac.jpg"/></span>
                             <span className="subject">
@@ -25,8 +49,8 @@ class Message extends Component {
                                         Hi mate, how is everything?
                                     </span>
                         </a>
-                    </MenuItem>
-                    <MenuItem eventKey="2">
+                    </li>
+                    <li>
                         <a href="index.html#">
                             <span className="photo"><img alt="avatar" src="assets/img/ui-divya.jpg"/></span>
                             <span className="subject">
@@ -37,8 +61,8 @@ class Message extends Component {
                                      Hi, I need your help with this.
                                     </span>
                         </a>
-                    </MenuItem>
-                    <MenuItem eventKey="3">
+                    </li>
+                    <li>
                         <a href="index.html#">
                             <span className="photo"><img alt="avatar" src="assets/img/ui-danro.jpg"/></span>
                             <span className="subject">
@@ -49,8 +73,8 @@ class Message extends Component {
                                         Love your new Dashboard.
                                     </span>
                         </a>
-                    </MenuItem>
-                    <MenuItem eventKey="4">
+                    </li>
+                    <li>
                         <a href="index.html#">
                                         <span className="photo"><img alt="avatar"
                                                                      src="assets/img/ui-sherman.jpg"/></span>
@@ -62,11 +86,11 @@ class Message extends Component {
                                         Please, answer asap.
                                     </span>
                         </a>
-                    </MenuItem>
-                    <MenuItem>
+                    </li>
+                    <li>
                         <a href="index.html#">See all messages</a>
-                    </MenuItem>
-                </DropdownButton>
+                    </li>
+                </ul>
             </li>
         );
     }

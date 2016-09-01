@@ -14,7 +14,7 @@ class TopMenu extends Component {
             <header className="header black-bg">
                 <div className="sidebar-toggle-box">
                     <OverlayTrigger placement="right" overlay={<Tooltip placement="right">Toggle Navigation</Tooltip>}>
-                        <div className="fa fa-bars tooltips"></div>
+                        <div className="fa fa-bars tooltips"/>
                     </OverlayTrigger>
                 </div>
                 <a href="index.html" className="logo"><b>DASHGUM FREE</b></a>
