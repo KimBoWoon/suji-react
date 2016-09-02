@@ -13,7 +13,7 @@ class TopMenu extends Component {
         return (
             <header className="header black-bg">
                 <div className="sidebar-toggle-box">
-                    <OverlayTrigger placement="right" overlay={<Tooltip placement="right">Toggle Navigation</Tooltip>}>
+                    <OverlayTrigger placement="right" overlay={<Tooltip id="tooltip" placement="right">Toggle Navigation</Tooltip>}>
                         <div className="fa fa-bars tooltips"/>
                     </OverlayTrigger>
                 </div>

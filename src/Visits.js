@@ -3,6 +3,7 @@
  */
 
 import React, {Component} from 'react';
+import {Sparklines, SparklinesBars, SparklinesSpots} from 'react-sparklines';
 
 class Visits extends Component {
     render() {
@@ -20,6 +21,9 @@ class Visits extends Component {
                         <li><span>2.000</span></li>
                         <li><span>0</span></li>
                     </ul>
+                    {/*<Sparklines data={[85, 50, 60, 45, 32, 62, 75]}>
+                     <SparklinesBars style={{fill: "#41c3f9"}}/>
+                     </Sparklines>*/}
                     <div className="bar">
                         <div className="title">JAN</div>
                         <div className="value tooltips" data-original-title="8.500"

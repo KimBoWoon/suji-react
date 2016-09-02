@@ -4,6 +4,7 @@
 
 
 import React, {Component} from 'react';
+import {Sparklines, SparklinesLine, SparklinesSpots} from 'react-sparklines';
 
 class Content extends Component {
     componentDidMount() {
@@ -11,8 +12,29 @@ class Content extends Component {
     }
 
     updateCanvas() {
-        const ctx = this.refs.canvas.getContext('2d');
-        ctx.fillRect(0, 0, 100, 100);
+        let doughnutData1 = [
+            {
+                value: 70,
+                color: "#68dff0"
+            },
+            {
+                value: 30,
+                color: "#fdfdfd"
+            }
+        ];
+        let myDoughnut1 = new Chart(document.getElementById("serverstatus01").getContext("2d")).Doughnut(doughnutData1);
+
+        let doughnutData2 = [
+            {
+                value: 60,
+                color: "#68dff0"
+            },
+            {
+                value: 40,
+                color: "#444c57"
+            }
+        ];
+        let myDoughnut2 = new Chart(document.getElementById("serverstatus02").getContext("2d")).Doughnut(doughnutData2);
     }
 
     render() {
@@ -30,7 +52,6 @@ class Content extends Component {
                                 </div>
                             </div>
                             <canvas id="serverstatus01" height={120} width={120} style={{height: 120, width: 120}}/>
-                            {/*<canvas ref="canvas" width={300} height={300}/>*/}
                         </div>
                     </div>
                     <div className="col-md-4 col-sm-4 mb">
@@ -102,12 +123,17 @@ class Content extends Component {
                                 <h5>REVENUE</h5>
                             </div>
                             <div className="chart mt">
-                                <div className="sparkline" data-type="line" data-resize="true"
-                                     data-height="75"
-                                     data-width="90%" data-line-width="1" data-line-color="#fff"
-                                     data-spot-color="#fff" data-fill-color=""
-                                     data-highlight-line-color="#fff" data-spot-radius="4"
-                                     data-data="[200,135,667,333,526,996,564,123,890,464,655]"></div>
+                                {/*<div className="sparkline" data-type="line" data-resize="true"*/}
+                                {/*data-height="75"*/}
+                                {/*data-width="90%" data-line-width="1" data-line-color="#fff"*/}
+                                {/*data-spot-color="#fff" data-fill-color=""*/}
+                                {/*data-highlight-line-color="#fff" data-spot-radius="4"*/}
+                                {/*data-data="[200,135,667,333,526,996,564,123,890,464,655]"></div>*/}
+                                <Sparklines data={[200, 135, 667, 333, 526, 996, 564, 123, 890, 464, 655]}
+                                            width={100} height={20} margin={5}>
+                                    <SparklinesLine style={{fill: "none", stroke: "#fff"}}/>
+                                    <SparklinesSpots style={{stroke: "#fff", fill: "#fff", spotRadius: 4}}/>
+                                </Sparklines>
                             </div>
                             <p className="mt"><b>$ 17,980</b><br/>Month Income</p>
                         </div>

@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import TopMenu from './TopMenu'
 import Aside from './Aside'
 import MiddleMenu from './MiddleMenu'
+import Bottom from './Bottom'
 
 class App extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = {
@@ -19,6 +20,7 @@ class App extends Component {
                     <TopMenu/>
                     <Aside/>
                     <MiddleMenu/>
+                    <Bottom/>
                 </section>
             </div>
         );
