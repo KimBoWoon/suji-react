@@ -9,26 +9,26 @@ class Message extends Component {
         super(props);
 
         this.state = {
-            openDropdownFlag: false
+            openSubmenuFlag: false
         };
     }
 
     showDropdown() {
-        this.state.openDropdownFlag = !this.state.openDropdownFlag;
+        this.state.openSubmenuFlag = !this.state.openSubmenuFlag;
 
-        if (this.state.openDropdownFlag)
-            this.state.openDropdownToggle = "dropdown open";
+        if (this.state.openSubmenuFlag)
+            this.state.openSubmenuToggle = "dropdown open";
         else
-            this.state.openDropdownToggle = "dropdown";
+            this.state.openSubmenuToggle = "dropdown";
 
         this.setState({
-            openDropdownToggle: this.state.openDropdownToggle
+            openSubmenuToggle: this.state.openSubmenuToggle
         });
     }
 
     render() {
         return (
-            <li id="header_inbox_bar" className={this.state.openDropdownToggle}>
+            <li id="header_inbox_bar" className={this.state.openSubmenuToggle}>
                 <a data-toggle="dropdown" className="dropdown-toggle" href="index.html#" onClick={this.showDropdown.bind(this)}>
                     <i className="fa fa-envelope-o"/>
                     <span className="badge bg-theme">5</span>
