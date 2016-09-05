@@ -38,6 +38,8 @@ class Content extends Component {
     }
 
     render() {
+        let sampleData = [200, 135, 667, 333, 526, 996, 564, 123, 890, 464, 655];
+
         return (
             <div>
                 <div className="row mt">
@@ -129,7 +131,7 @@ class Content extends Component {
                                 {/*data-spot-color="#fff" data-fill-color=""*/}
                                 {/*data-highlight-line-color="#fff" data-spot-radius="4"*/}
                                 {/*data-data="[200,135,667,333,526,996,564,123,890,464,655]"></div>*/}
-                                <Sparklines data={[200, 135, 667, 333, 526, 996, 564, 123, 890, 464, 655]}
+                                <Sparklines data={sampleData}
                                             width={100} height={20} margin={5}>
                                     <SparklinesLine style={{fill: "none", stroke: "#fff"}}/>
                                     <SparklinesSpots style={{stroke: "#fff", fill: "#fff", spotRadius: 4}}/>

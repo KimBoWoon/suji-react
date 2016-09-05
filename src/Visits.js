@@ -3,7 +3,7 @@
  */
 
 import React, {Component} from 'react';
-import {Sparklines, SparklinesBars, SparklinesSpots} from 'react-sparklines';
+import {OverlayTrigger, Tooltip} from 'react-bootstrap';
 
 class Visits extends Component {
     render() {
@@ -21,57 +21,47 @@ class Visits extends Component {
                         <li><span>2.000</span></li>
                         <li><span>0</span></li>
                     </ul>
-                    {/*<Sparklines data={[85, 50, 60, 45, 32, 62, 75]}>
-                     <SparklinesBars style={{fill: "#41c3f9"}}/>
-                     </Sparklines>*/}
                     <div className="bar">
                         <div className="title">JAN</div>
-                        <div className="value tooltips" data-original-title="8.500"
-                             data-toggle="tooltip"
-                             data-placement="top">85%
-                        </div>
+                        <OverlayTrigger placement="top" overlay={<Tooltip id="tooltip" placement="top">8.500</Tooltip>}>
+                            <div className="value tooltips" style={{height: 85 + "%"}}/>
+                        </OverlayTrigger>
                     </div>
                     <div className="bar ">
                         <div className="title">FEB</div>
-                        <div className="value tooltips" data-original-title="5.000"
-                             data-toggle="tooltip"
-                             data-placement="top">50%
-                        </div>
+                        <OverlayTrigger placement="top" overlay={<Tooltip id="tooltip" placement="top">5.000</Tooltip>}>
+                            <div className="value tooltips" style={{height: 50 + "%"}}/>
+                        </OverlayTrigger>
                     </div>
                     <div className="bar ">
                         <div className="title">MAR</div>
-                        <div className="value tooltips" data-original-title="6.000"
-                             data-toggle="tooltip"
-                             data-placement="top">60%
-                        </div>
+                        <OverlayTrigger placement="top" overlay={<Tooltip id="tooltip" placement="top">6.000</Tooltip>}>
+                            <div className="value tooltips" style={{height: 60 + "%"}}/>
+                        </OverlayTrigger>
                     </div>
                     <div className="bar ">
                         <div className="title">APR</div>
-                        <div className="value tooltips" data-original-title="4.500"
-                             data-toggle="tooltip"
-                             data-placement="top">45%
-                        </div>
+                        <OverlayTrigger placement="top" overlay={<Tooltip id="tooltip" placement="top">4.500</Tooltip>}>
+                            <div className="value tooltips" style={{height: 45 + "%"}}/>
+                        </OverlayTrigger>
                     </div>
                     <div className="bar">
                         <div className="title">MAY</div>
-                        <div className="value tooltips" data-original-title="3.200"
-                             data-toggle="tooltip"
-                             data-placement="top">32%
-                        </div>
+                        <OverlayTrigger placement="top" overlay={<Tooltip id="tooltip" placement="top">3.200</Tooltip>}>
+                            <div className="value tooltips" style={{height: 32 + "%"}}/>
+                        </OverlayTrigger>
                     </div>
                     <div className="bar ">
                         <div className="title">JUN</div>
-                        <div className="value tooltips" data-original-title="6.200"
-                             data-toggle="tooltip"
-                             data-placement="top">62%
-                        </div>
+                        <OverlayTrigger placement="top" overlay={<Tooltip id="tooltip" placement="top">6.200</Tooltip>}>
+                            <div className="value tooltips" style={{height: 62 + "%"}}/>
+                        </OverlayTrigger>
                     </div>
                     <div className="bar">
                         <div className="title">JUL</div>
-                        <div className="value tooltips" data-original-title="7.500"
-                             data-toggle="tooltip"
-                             data-placement="top">75%
-                        </div>
+                        <OverlayTrigger placement="top" overlay={<Tooltip id="tooltip" placement="top">7.500</Tooltip>}>
+                            <div className="value tooltips" style={{height: 75 + "%"}}/>
+                        </OverlayTrigger>
                     </div>
                 </div>
             </div>

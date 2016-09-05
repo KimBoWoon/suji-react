@@ -16,7 +16,7 @@ class Calendar extends Component {
                             <h3 className="popover-title"/>
                             <div id="date-popover-content" className="popover-content"></div>
                         </div>
-                        <div id="my-calendar"></div>
+                        <div ref="my-calendar"/>
                     </div>
                 </div>
             </div>
