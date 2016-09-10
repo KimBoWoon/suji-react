@@ -5,6 +5,12 @@
 import React, {Component} from 'react'
 
 class Calendar extends Component {
+    componentDidMount() {
+        const {calendar} = this.refs;
+
+        $(calendar).fullCalendar();
+    }
+
     render() {
         return (
             <div id="calendar" className="mb">
@@ -17,6 +23,7 @@ class Calendar extends Component {
                             <div id="date-popover-content" className="popover-content"></div>
                         </div>
                         <div ref="my-calendar"/>
+                        <div ref="calender"/>
                     </div>
                 </div>
             </div>

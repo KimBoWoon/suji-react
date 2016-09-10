@@ -6,32 +6,35 @@
 import React, {Component} from 'react';
 
 class Aside extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
-        this.state = {
-            openSubmenuFlag: false,
-            openSubmenuToggle: "dcjq-parent",
-            displayToggle: "none"
-        };
+        // this.state = {
+        //     openSubmenuFlag: false,
+        //     openUIElement: "dcjq-parent",
+        //     displayToggle: "none"
+        // };
     }
 
-    showSubmenu() {
-        this.state.openSubmenuFlag = !this.state.openSubmenuFlag;
-
-        if (this.state.openSubmenuFlag) {
-            this.state.openSubmenuToggle = "dcjq-parent active";
-            this.state.displayToggle = "block";
-        }
-        else {
-            this.state.openSubmenuToggle = "dcjq-parent";
-            this.state.displayToggle = "none";
-        }
-
-        this.setState({
-            openSubmenuToggle: this.state.openSubmenuToggle
-        });
-    }
+    // showSubmenu() {
+    //     this.setState({
+    //         openSubmenuFlag: !this.state.openSubmenuFlag,
+    //         openUIElement: this.state.openUIElement
+    //     });
+    //
+    //     if (this.state.openSubmenuFlag) {
+    //         this.setState({
+    //             openUIElement: "block",
+    //             displayToggle: "dcjq-parent active"
+    //         });
+    //     }
+    //     else {
+    //         this.setState({
+    //             openUIElement: "none",
+    //             displayToggle: "dcjq-parent"
+    //         });
+    //     }
+    // }
 
     render() {
         return (
@@ -49,11 +52,11 @@ class Aside extends Component {
                             </a>
                         </li>
                         <li className="sub-menu">
-                            <a href="javascript:;" className={this.state.openSubmenuToggle} onClick={this.showSubmenu.bind(this)}>
+                            <a href="javascript:;">
                                 <i className="fa fa-desktop"/>
                                 <span>UI Elements</span>
                             </a>
-                            <ul className="sub" style={{overflow: "hidden", display: this.state.displayToggle}}>
+                            <ul className="sub">
                                 <li><a href="general.html">General</a></li>
                                 <li><a href="buttons.html">Buttons</a></li>
                                 <li><a href="panels.html">Panels</a></li>

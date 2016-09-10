@@ -5,7 +5,7 @@
 import React, {Component} from 'react';
 
 class Message extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = {
@@ -14,22 +14,28 @@ class Message extends Component {
     }
 
     showDropdown() {
-        this.state.openSubmenuFlag = !this.state.openSubmenuFlag;
-
-        if (this.state.openSubmenuFlag)
-            this.state.openSubmenuToggle = "dropdown open";
-        else
-            this.state.openSubmenuToggle = "dropdown";
-
         this.setState({
+            openSubmenuFlag: !this.state.openSubmenuFlag,
             openSubmenuToggle: this.state.openSubmenuToggle
         });
+
+        if (this.state.openSubmenuFlag) {
+            this.setState({
+                openSubmenuToggle: "dropdown open"
+            });
+        }
+        else {
+            this.setState({
+                openSubmenuToggle: "dropdown"
+            });
+        }
     }
 
     render() {
         return (
             <li id="header_inbox_bar" className={this.state.openSubmenuToggle}>
-                <a data-toggle="dropdown" className="dropdown-toggle" href="index.html#" onClick={this.showDropdown.bind(this)}>
+                <a data-toggle="dropdown" className="dropdown-toggle" href="index.html#"
+                   onClick={this.showDropdown.bind(this)}>
                     <i className="fa fa-envelope-o"/>
                     <span className="badge bg-theme">5</span>
                 </a>
