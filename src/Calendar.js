@@ -5,12 +5,6 @@
 import React, {Component} from 'react'
 
 class Calendar extends Component {
-    componentDidMount() {
-        const {calendar} = this.refs;
-
-        $(calendar).fullCalendar();
-    }
-
     render() {
         return (
             <div id="calendar" className="mb">

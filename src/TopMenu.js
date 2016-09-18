@@ -4,8 +4,8 @@
 
 import React, {Component} from 'react';
 import {OverlayTrigger, Tooltip} from 'react-bootstrap';
-import Task from './Task'
-import Message from './Message'
+import Task from './TaskComponent'
+import Message from './MessageComponent'
 import Login from './Login'
 
 class TopMenu extends Component {
