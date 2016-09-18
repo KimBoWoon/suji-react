@@ -8,33 +8,7 @@ import React, {Component} from 'react';
 class Aside extends Component {
     constructor(props) {
         super(props);
-
-        // this.state = {
-        //     openSubmenuFlag: false,
-        //     openUIElement: "dcjq-parent",
-        //     displayToggle: "none"
-        // };
     }
-
-    // showSubmenu() {
-    //     this.setState({
-    //         openSubmenuFlag: !this.state.openSubmenuFlag,
-    //         openUIElement: this.state.openUIElement
-    //     });
-    //
-    //     if (this.state.openSubmenuFlag) {
-    //         this.setState({
-    //             openUIElement: "block",
-    //             displayToggle: "dcjq-parent active"
-    //         });
-    //     }
-    //     else {
-    //         this.setState({
-    //             openUIElement: "none",
-    //             displayToggle: "dcjq-parent"
-    //         });
-    //     }
-    // }
 
     render() {
         return (

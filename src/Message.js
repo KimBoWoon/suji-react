@@ -7,35 +7,12 @@ import React, {Component} from 'react';
 class Message extends Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            openSubmenuFlag: false
-        };
-    }
-
-    showDropdown() {
-        this.setState({
-            openSubmenuFlag: !this.state.openSubmenuFlag,
-            openSubmenuToggle: this.state.openSubmenuToggle
-        });
-
-        if (this.state.openSubmenuFlag) {
-            this.setState({
-                openSubmenuToggle: "dropdown open"
-            });
-        }
-        else {
-            this.setState({
-                openSubmenuToggle: "dropdown"
-            });
-        }
     }
 
     render() {
         return (
-            <li id="header_inbox_bar" className={this.state.openSubmenuToggle}>
-                <a data-toggle="dropdown" className="dropdown-toggle" href="index.html#"
-                   onClick={this.showDropdown.bind(this)}>
+            <li id="header_inbox_bar" className="dropdown">
+                <a data-toggle="dropdown" className="dropdown-toggle" href="index.html#">
                     <i className="fa fa-envelope-o"/>
                     <span className="badge bg-theme">5</span>
                 </a>

@@ -8,35 +8,12 @@ import {ProgressBar} from 'react-bootstrap';
 class Task extends Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            openSubmenuFlag: false
-        };
-    }
-
-    showDropdown() {
-        this.setState({
-            openSubmenuFlag: !this.state.openSubmenuFlag,
-            openSubmenuToggle: this.state.openSubmenuToggle
-        });
-
-        if (this.state.openSubmenuFlag) {
-            this.setState({
-                openSubmenuToggle: "dropdown open"
-            });
-        }
-        else {
-            this.setState({
-                openSubmenuToggle: "dropdown"
-            });
-        }
     }
 
     render() {
         return (
-            <li className={this.state.openSubmenuToggle}>
-                <a data-toggle="dropdown" className="dropdown-toggle" href="index.html#"
-                   onClick={this.showDropdown.bind(this)}>
+            <li className="dropdown">
+                <a data-toggle="dropdown" className="dropdown-toggle" href="index.html#">
                     <i className="fa fa-tasks"/>
                     <span className="badge bg-theme">4</span>
                 </a>
