@@ -22,10 +22,10 @@ class Task extends Component {
                     <li>
                         <p className="green">You have 4 pending tasks</p>
                     </li>
-                    <TaskContent btnStyle="success" nowValue="40"/>
-                    <TaskContent btnStyle="warning" nowValue="60"/>
-                    <TaskContent btnStyle="info" nowValue="80"/>
-                    <TaskContent btnStyle="danger" nowValue="70"/>
+                    <TaskContent btnStyle="success" nowValue={40}/>
+                    <TaskContent btnStyle="warning" nowValue={60}/>
+                    <TaskContent btnStyle="info" nowValue={80}/>
+                    <TaskContent btnStyle="danger" nowValue={70}/>
                     <li>
                         <a href="#">See All Tasks</a>
                     </li>

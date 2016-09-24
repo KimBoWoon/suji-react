@@ -4,12 +4,19 @@
 
 import React, {Component} from 'react';
 import {OverlayTrigger, Tooltip} from 'react-bootstrap';
-import Time from 'react-time'
 import Task from './TaskComponent'
 import Message from './MessageComponent'
 import Login from './Login'
 
 class TopMenu extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    // componentDidMount() {
+    //     this.getTime();
+    // }
+
     getTime() {
         let today = new Date();
         let h = today.getHours();
@@ -22,7 +29,7 @@ class TopMenu extends Component {
         // document.getElementsByClassName('showtime').innerHTML = <h1>Hi</h1>;
 
         let t = setTimeout(function () {
-            getTime()
+            this.getTime()
         }, 500);
     }
 
@@ -53,9 +60,8 @@ class TopMenu extends Component {
                 </div>
                 <div onLoad={this.getTime()}/>
                 <div className="showtime"/>
-                <div className="nav pull-right top-menu">
-                    <Time value={now} format="HH:mm:ss"/>
-                </div>
+                <div className="nav pull-right top-menu"/>
+                <div classID="showtime"/>
                 <Login/>
             </header>
         );

@@ -15,10 +15,10 @@ class MessageContent extends Component {
                 <a href="index.html#">
                     <span className="photo"><img alt="avatar" src={this.props.profileImg}/></span>
                     <span className="subject">
-                                    <span className="from">{this.props.name}</span>
-                                    <span className="time">{this.props.time}</span>
+                                    <span className="from">{this.props.userName}</span>
+                                    <span className="time">{this.props.arriveTime}</span>
                                     </span>
-                    <span className="message">{this.props.message}</span>
+                    <span className="message">{this.props.userMessage}</span>
                 </a>
             </li>
         );
